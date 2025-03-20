@@ -3,6 +3,7 @@ let searchBar = document.querySelector(".search-bar");
 
 let videosData = [];
 
+//function fetching data from the api
 async function fetchResponse() {
   const url =
     "https://api.freeapi.app/api/v1/public/youtube/videos?page=1&limit=20&query=javascript&sortBy=keep%2520one%253A%2520mostLiked%2520%257C%2520mostViewed%2520%257C%2520latest%2520%257C%2520oldest";
@@ -17,6 +18,7 @@ async function fetchResponse() {
   }
 }
 
+// function getting response from the fetchResponse() function and embeding data in innerHTML
 async function apiResponce() {
   let response = await fetchResponse();
 
@@ -53,6 +55,7 @@ async function apiResponce() {
 }
 apiResponce();
 
+// function for searchVideo functinality
 function searchVideos() {
   searchBar.addEventListener("input", () => {
     let searchInput = searchBar.value.toLowerCase();
